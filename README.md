@@ -34,7 +34,8 @@ MỤC LỤC
 6. [Tiến hành dự đoán .............................................................................................................. 10 ](#_page9_x71.00_y564.68)
 
 
-1. Phân<a name="_page2_x71.00_y83.68"></a> tích khám phá dữ liệu (EDA)  
+
+### 1. Phân<a name="_page2_x71.00_y83.68"></a> tích khám phá dữ liệu (EDA)  
 1.1. Mô<a name="_page2_x71.00_y126.68"></a> tả dữ liệu: 
 
 Bộ dữ liệu “train\_attacker\_2022” bao gồm 48030 quan sát (dòng) và 66 biến (cột). Đây là thông tin chi tiết của các giao dịch của khách hàng được ghi chép bởi ngân hàng. Bảng ở dưới là mô tả chung của dữ liệu: 
