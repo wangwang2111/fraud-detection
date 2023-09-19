@@ -11,29 +11,29 @@ A project using some machine learning tools for fraud detection in banking credi
 MỤC LỤC 
 
 1. [Phân tích khám phá dữ liệu (EDA) .......................................................................................... 3 ](#_page2_x71.00_y83.68)
-1. [Mô tả dữ liệu: ................................................................................................................... 3 ](#_page2_x71.00_y126.68)
-1. [Thống kê mô tả ................................................................................................................. 3 ](#_page2_x71.00_y239.68)
-1. [Dữ liệu định lượng: ........................................................................................................ 3 ](#_page2_x71.00_y276.68)
-1. [Dữ liệu định tính: ........................................................................................................... 3 ](#_page2_x71.00_y511.68)
-1. [Các biến chưa xác định và khác ....................................................................................... 4 ](#_page3_x71.00_y336.68)
-3. [Dữ liệu thiếu ..................................................................................................................... 5 ](#_page4_x111.00_y289.68)
-4. [Phân phối của dữ liệu: ........................................................................................................ 5 ](#_page4_x71.00_y382.68)
-1. [Dữ liệu định tính: ........................................................................................................... 5 ](#_page4_x71.00_y418.68)
-1. [Dữ liệu định lượng ......................................................................................................... 5 ](#_page4_x71.00_y578.68)
+1.1. [Mô tả dữ liệu: ................................................................................................................... 3 ](#_page2_x71.00_y126.68)
+1.2. [Thống kê mô tả ................................................................................................................. 3 ](#_page2_x71.00_y239.68)
+1.2.1. [Dữ liệu định lượng: ........................................................................................................ 3 ](#_page2_x71.00_y276.68)
+1.2.2. [Dữ liệu định tính: ........................................................................................................... 3 ](#_page2_x71.00_y511.68)
+1.2.3. [Các biến chưa xác định và khác ....................................................................................... 4 ](#_page3_x71.00_y336.68)
+1.3. [Dữ liệu thiếu ..................................................................................................................... 5 ](#_page4_x111.00_y289.68)
+1.4. [Phân phối của dữ liệu: ........................................................................................................ 5 ](#_page4_x71.00_y382.68)
+1.4.1. [Dữ liệu định tính: ........................................................................................................... 5 ](#_page4_x71.00_y418.68)
+1.4.2. [Dữ liệu định lượng ......................................................................................................... 5 ](#_page4_x71.00_y578.68)
 2. [Làm sạch dữ liệu................................................................................................................... 6 ](#_page5_x71.00_y185.68)
-1. [Lỗi định dạng.................................................................................................................... 6 ](#_page5_x71.00_y228.68)
-1. [Loại bỏ các biến không dùng đến ........................................................................................ 6 ](#_page5_x71.00_y366.68)
-1. [Xử lý dữ liệu bị thiếu ......................................................................................................... 6 ](#_page5_x71.00_y453.68)
-1. [Kiểm tra mức độ tương quan giữa các biến ........................................................................... 7 ](#_page6_x71.00_y298.68)
+2.1. [Lỗi định dạng.................................................................................................................... 6 ](#_page5_x71.00_y228.68)
+2.2. [Loại bỏ các biến không dùng đến ........................................................................................ 6 ](#_page5_x71.00_y366.68)
+2.3. [Xử lý dữ liệu bị thiếu ......................................................................................................... 6 ](#_page5_x71.00_y453.68)
+2.4. [Kiểm tra mức độ tương quan giữa các biến ........................................................................... 7 ](#_page6_x71.00_y298.68)
 3. [Xây dựng mô hình ............................................................................................................. 7 ](#_page6_x71.00_y568.68)
-1. [Mô hình hồi quy Logistic ................................................................................................... 7 ](#_page6_x71.00_y611.68)
-1. [Mô hình Deep Learning (Mạng nơ-ron)................................................................................ 8 ](#_page7_x71.00_y385.68)
-1. [Mô hình Random Forest ..................................................................................................... 9 ](#_page8_x71.00_y158.68)
-1. [Mô hình SVM ................................................................................................................... 9 ](#_page8_x71.00_y710.68)
+3.1. [Mô hình hồi quy Logistic ................................................................................................... 7 ](#_page6_x71.00_y611.68)
+3.2. [Mô hình Deep Learning (Mạng nơ-ron)................................................................................ 8 ](#_page7_x71.00_y385.68)
+3.3. [Mô hình Random Forest ..................................................................................................... 9 ](#_page8_x71.00_y158.68)
+3.4. [Mô hình SVM ................................................................................................................... 9 ](#_page8_x71.00_y710.68)
 4. [So sánh và chọn mô hình .................................................................................................. 10 ](#_page9_x71.00_y451.68)
-4. [Tiến hành dự đoán .............................................................................................................. 10 ](#_page9_x71.00_y564.68)
+5. [Tiến hành dự đoán .............................................................................................................. 10 ](#_page9_x71.00_y564.68)
 1. Phân<a name="_page2_x71.00_y83.68"></a> tích khám phá dữ liệu (EDA) 
-1. Mô<a name="_page2_x71.00_y126.68"></a> tả dữ liệu: 
+1.1. Mô<a name="_page2_x71.00_y126.68"></a> tả dữ liệu: 
 
 Bộ dữ liệu “train\_attacker\_2022” bao gồm 48030 quan sát (dòng) và 66 biến (cột). Đây là thông tin chi tiết của các giao dịch của khách hàng được ghi chép bởi ngân hàng. Bảng ở dưới là mô tả chung của dữ liệu: 
 
@@ -41,8 +41,8 @@ Bộ dữ liệu “train\_attacker\_2022” bao gồm 48030 quan sát (dòng) v
 
 Vào những phần sau của khám phá dữ liệu, chúng tôi sẽ đưa ra các giả thuyết về những dữ liệu đã bị ẩn. 
 
-2. Thống<a name="_page2_x71.00_y239.68"></a> kê mô tả 
-1. Dữ<a name="_page2_x71.00_y276.68"></a> liệu định lượng: 
+1.2. Thống<a name="_page2_x71.00_y239.68"></a> kê mô tả 
+1.2.1. Dữ<a name="_page2_x71.00_y276.68"></a> liệu định lượng: 
 
 Xử lý một số biến bị định dạng sai trong bộ dữ liệu (các biến cat, dob). 
 
@@ -56,7 +56,7 @@ Nhìn chung, chúng tôi thấy có sự tương đồng giữa số lượng qu
 
 Các biến còn lại: giá trị giao dịch, số ngày kiểm duyệt, giá trị kiểm duyệt, số lượng giao dịch, lượng bạn bè, lượng người đăng ký đều có tính chất tương tự với hệ số nhân. 
 
-2. Dữ<a name="_page2_x71.00_y511.68"></a> liệu định tính: 
+1.2.2. Dữ<a name="_page2_x71.00_y511.68"></a> liệu định tính: 
 
 Như phần trên, các biến định tính đã được chuyển thành loại dữ liệu đúng Chúng tôi có được bảng tổng kết các biến định tính như sau: 
 
@@ -90,7 +90,7 @@ current\_location\_city, current\_location\_country: Địa chỉ hiện tại c
 
 hometown\_location\_city, hometown\_location\_country: Thông tin quê quán khách hàng: thành phố khác với địa chỉ hiện tại 11% là ở Hà Nội, còn quốc gia vẫn là Việt Nam (98%) 
 
-3. Các<a name="_page3_x71.00_y336.68"></a> biến chưa xác định và khác 
+1.2.3. Các<a name="_page3_x71.00_y336.68"></a> biến chưa xác định và khác 
 
 Sau quan sát dữ liệu, chúng tôi đưa ra:  
 
@@ -128,14 +128,14 @@ Lượng thông tin của người bán hàng có rất ít 7570/48030, không c
 
 Vị trí giao dịch cũng có khá nhiều giá trị đơn nhất, với vị trí khách hàng thường xuyên thực hiện giao dịch nhất là “153 Xô Viết Nghệ Tĩnh Quận Bình Thạnh” với 337 giao dịch 
 
-3. Dữ<a name="_page4_x111.00_y289.68"></a> liệu thiếu 
+1.3. Dữ<a name="_page4_x111.00_y289.68"></a> liệu thiếu 
 
 **Bảng 9. Thông tin dữ liệu thiếu [\[9\]](#_page15_x375.00_y529.68)** 
 
 Từ bảng, chúng tôi quan sát được là nhiều dữ liệu thiếu cùng số lượng, có nhiều biến thiếu nhiều hơn 40% dữ liệu. Vấn đề này sẽ cần được xử lý. 
 
-4. Phân<a name="_page4_x71.00_y418.68"></a><a name="_page4_x71.00_y382.68"></a> phối của dữ liệu: 
-1. Dữ liệu định tính: 
+1.4. Phân<a name="_page4_x71.00_y418.68"></a><a name="_page4_x71.00_y382.68"></a> phối của dữ liệu: 
+1.4.1. Dữ liệu định tính: 
 
 Chúng tôi vẽ phân phối của các biến định tính, trong mục này sẽ thể hiện những đồ thị quan trọng, bất thường, và nhận xét. 
 
@@ -145,7 +145,7 @@ Số lượng giao dịch chính thống gần gấp đôi lượng giao dịch 
 
 **Hình 2. Đồ thị biến cat\_5 [\[II\]](#_page17_x359.00_y488.68)** Tất cả dữ liệu sẵn có của cat\_5 đều chỉ thuộc vào một nhóm. 
 
-2. Dữ<a name="_page4_x71.00_y578.68"></a> liệu định lượng 
+1.4.2. Dữ<a name="_page4_x71.00_y578.68"></a> liệu định lượng 
 
 **Hình 3. Đồ thị biến hệ số nhân [\[III\]](#_page17_x370.00_y702.68)** 
 
@@ -168,7 +168,7 @@ Biến unknown\_var\_7, 9 gần với phân phối chuẩn
 Unknown\_var\_10, 13, 14, 15, 17 có giao động trong phân phối. 
 
 2. Làm<a name="_page5_x71.00_y185.68"></a> sạch dữ liệu 
-1. Lỗi<a name="_page5_x71.00_y228.68"></a> định dạng 
+2.1. Lỗi<a name="_page5_x71.00_y228.68"></a> định dạng 
 
 Chúng tôi tiến hành xử lý vấn đề đầu tiên của bộ dữ liệu là về lỗi định dạng các biến. Cụ thể, dữ liệu gốc chứa các biến sau ở định dạng lỗi: 
 
@@ -179,13 +179,13 @@ Cách xử lý lỗi đã trình bày ở trên gồm 2 hướng giải quyết:
 
 - Đưa định dạng time\_1, time\_2 về datetime 
 - Mã  hóa  UTF8  cho  trans\_location,  job,  com\_type,  job\_detail,  current\_location\_city, hometown\_location\_city 
-2. Loại<a name="_page5_x71.00_y366.68"></a> bỏ các biến không dùng đến 
+2.2. Loại<a name="_page5_x71.00_y366.68"></a> bỏ các biến không dùng đến 
 
 Trong bài báo cáo này, chúng tôi sẽ loại bỏ các biến không dùng đến trong quá trình chạy mô hình machine learning. Các biến không cần thiết bao gồm: 
 
 id,  time\_1,  time\_2,  date\_1,  date\_2,  date\_3,  date\_4,  address,  mer\_id,  mer\_name, trans\_location,  job,  com\_type,  job\_detail,  current\_location\_city, <a name="_page5_x71.00_y453.68"></a>current\_location\_country, hometown\_location\_city, hometown\_location\_country, cat\_5 
 
-3. Xử lý dữ liệu bị thiếu 
+2.3. Xử lý dữ liệu bị thiếu 
 
 Tiếp theo, chúng tôi tiến hành xử lý vấn đề dữ liệu bị thiếu. Dựa trên quan sát, bộ dữ liệu cho thấy có nhiều biến có đặc điểm thiếu cùng nhau (missing-together variables). Cụ thể, với các bản ghi bị thiếu giá trị ở biến time\_1, thì các biến khác như time\_2, Field\_11, date\_3, date\_4, v.v cũng bị thiếu theo. Điều này có thể được thể hiện qua bảng tính số lượng các giá trị bị thiếu của các biến có đủ giá trị time\_1 và các biến bị thiếu giá trị time\_1 dưới đây: 
 
@@ -211,7 +211,7 @@ Giải pháp xử lý dữ liệu bị thiếu đối với hai phần dữ li�
 
 **Hình 9. Đồ thị boxplot của phần dữ liệu bao gồm các quan sát thiếu giá trị time\_1 [\[IX\]](#_page21_x486.00_y449.68)** 
 
-4. Kiểm<a name="_page6_x71.00_y298.68"></a> tra mức độ tương quan giữa các biến 
+2.4. Kiểm<a name="_page6_x71.00_y298.68"></a> tra mức độ tương quan giữa các biến 
 
 Đa cộng tuyến cao (multicollinearity) là một hiện tượng thường gặp trong phân tích dữ liệu. Sự xuất hiện của hiện tượng đa cộng tuyến làm các mô hình bị ước lượng sai và chệch khỏi giá trị chính xác. Chúng tôi xử lý vấn đề này bằng cách kiểm tra hệ số tương quan giữa các biến trong dữ liệu, đối với hai biến có hệ số tương quan từ 0.9 trở lên thì sẽ tiến hành loại bỏ một trong hai biến. 
 
@@ -228,7 +228,7 @@ Giải pháp xử lý dữ liệu bị thiếu đối với hai phần dữ li�
 Đối với phần dữ liệu thiếu giá trị của time\_1 thì chỉ có duy nhất một biến phân loại (biến unknown\_var\_5) <a name="_page6_x71.00_y568.68"></a>nên không có đồ thị tương quan giữa các biến phân loại (chi tiết ở Bảng 11) 
 
 3. Xây<a name="_page6_x71.00_y611.68"></a> dựng mô hình 
-1. Mô hình hồi quy Logistic 
+3.1. Mô hình hồi quy Logistic 
 
 Vì bộ dữ liệu được định dạng và gắn nhãn (labeled data) nên nhóm nghiên cứu trước tiên sử dụng các mô hình học có giám sát (supervised learning). Trước hết, chúng tôi sử dụng mô hình hồi quy logistics vì tính đơn giản, phù hợp của mô hình và khả năng giải thích cao của nó. 
 
@@ -253,7 +253,7 @@ Kết quả thu được khi chạy mô hình hồi quy tuyến tính là:
 
 Chỉ số Precision giữa 2 mô hình cũng xấp xỉ nằm ở mức 0.344 và 0.5. Chỉ số Recall và F1 của 2 mô hình tương đối thấp cho thấy hiệu quả dự báo không tốt. 
 
-2. Mô<a name="_page7_x71.00_y385.68"></a> hình Deep Learning (Mạng nơ-ron) 
+3.2. Mô<a name="_page7_x71.00_y385.68"></a> hình Deep Learning (Mạng nơ-ron) 
 
 Do để phát hiện lừa đảo trong tài chính, mô hình mạng nơ-ron nhân tạo có hiệu quả cao và vô cùng phổ biến, chúng tôi quyết định áp dụng mô hình này trong bài nghiên cứu.  
 
@@ -280,7 +280,7 @@ Kết quả thu được khi chạy mô hình deep learning là:
 
 Nhìn chung các chỉ số của mô hình Deep learning không quá khả quan: dự đoán chính xác chỉ được hơn nửa. Đồng thời, các chỉ số Precision, Recall và F1 cũng không quá cao chỉ tầm hơn 30%. 
 
-3. Mô<a name="_page8_x71.00_y158.68"></a> hình Random Forest 
+3.3. Mô<a name="_page8_x71.00_y158.68"></a> hình Random Forest 
 
 Mô hình decision tree được tạo nên từ những chuỗi câu lệnh if-else (dựa trên các biến độc lập) từ đó tạo nên một lưu đồ giúp chúng tôi dự đoán kết quả dựa trên tập dữ liệu. Ý tưởng của cây quyết định là chia tập dữ liệu thành các tập dữ liệu nhỏ hơn dựa trên những đặc điểm được mô tả. Mỗi câu hỏi giúp một cá nhân đi đến quyết định cuối cùng, quyết định này sẽ được biểu thị bằng nút lá. Các quan sát phù hợp với tiêu chí sẽ đi theo nhánh “Có” và những quan sát không phù hợp sẽ đi theo con đường thay thế.Dựa trên đó, mô hình random forest được tạo thành từ nhiều mô hình decision tree một cách ngẫu nhiên. Random forest được coi là một trong những mô hình học có giám sát được ứng dụng trong bài toán phân loại. So với decision tree, random forest hiệu quả hơn vì nó loại bỏ được tính thiên vị trong mô hình, giảm bớt vấn đề sự quá vừa trong dữ liệu (overfitting data).  
 
@@ -300,5 +300,4 @@ Kết quả thu được khi chạy mô hình là:
 |Precision |0\.309 |0\.344 |
 |Recall |||
 
-**This document was truncated here because it was created in the Evaluation Mode.**
-**Created with an evaluation copy of Aspose.Words. To discover the full versions of our APIs please visit: https://products.aspose.com/words/**
+
