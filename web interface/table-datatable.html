@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datatable - Voler Admin Dashboard</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+
+    <link rel="stylesheet" href="assets/vendors/simple-datatables/style.css">
+
+    <link rel="stylesheet" href="assets/vendors/perfect-scrollbar/perfect-scrollbar.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div id="sidebar" class='active'>
+            <div class="sidebar-wrapper active">
+                <div class="sidebar-header">
+                    <img src="assets/images/logo.svg" alt="" srcset="" width="200px;">
+                </div>
+                <div class="sidebar-menu">
+                    <ul class="menu">
+
+
+                        <li class='sidebar-title'>Main Menu</li>
+
+
+
+                        <li class="sidebar-item">
+
+                            <a href="index.html" class='sidebar-link'>
+                                <i data-feather="home" width="20"></i>
+                                <span>Dashboard</span>
+                            </a>
+
+
+                        </li>
+
+
+
+                        <li class="sidebar-item active has-sub">
+
+                            <a href="table-datatable.html" class='sidebar-link'>
+                                <i data-feather="file-plus" width="20"></i>
+                                <span>Fraud Detection Management</span>
+                            </a>
+                            <ul class="submenu ">
+
+                                <li>
+                                    <a href="table-datatable.html">All Transactions</a>
+                                </li>
+
+                                <li>
+                                    <a href="fraud-transactions.html">Fraud Transactions</a>
+                                </li>
+
+                                <li>
+                                    <a href="normal-transactions.html">Normal Transactions</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                        <li class="sidebar-item">
+
+                            <a href="ui-chart-chartjs.html" class='sidebar-link'>
+                                <i data-feather="trending-up" width="20"></i>
+                                <span>Fraud Detection Statistics</span>
+                            </a>
+
+                        </li>
+
+
+
+                        <li class='sidebar-title'>Pages</li>
+
+
+
+                        <li class="sidebar-item  has-sub">
+
+                            <a href="#" class='sidebar-link'>
+                                <i data-feather="user" width="20"></i>
+                                <span>Authentication</span>
+                            </a>
+
+
+                            <ul class="submenu ">
+
+                                <li>
+                                    <a href="auth-login.html">Login</a>
+                                </li>
+
+                                <li>
+                                    <a href="auth-register.html">Register</a>
+                                </li>
+
+                                <li>
+                                    <a href="auth-forgot-password.html">Forgot Password</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+
+                        <li class="sidebar-item  has-sub">
+
+                            <a href="#" class='sidebar-link'>
+                                <i data-feather="alert-circle" width="20"></i>
+                                <span>Errors</span>
+                            </a>
+
+
+                            <ul class="submenu ">
+
+                                <li>
+                                    <a href="error-403.html">403</a>
+                                </li>
+
+                                <li>
+                                    <a href="error-404.html">404</a>
+                                </li>
+
+                                <li>
+                                    <a href="error-500.html">500</a>
+                                </li>
+
+                            </ul>
+
+                        </li>
+
+
+                    </ul>
+                </div>
+                <button class="sidebar-toggler btn x"><i data-feather="x"></i></button>
+            </div>
+        </div>
+        <div id="main">
+            <nav class="navbar navbar-header navbar-expand navbar-light">
+                <a class="sidebar-toggler" href="#"><span class="navbar-toggler-icon"></span></a>
+                <button class="btn navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav d-flex align-items-center navbar-light ms-auto">
+                        <li class="dropdown nav-icon">
+                            <a href="#" data-bs-toggle="dropdown"
+                                class="nav-link  dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="d-lg-inline-block">
+                                    <i data-feather="bell"></i>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-large">
+                                <h6 class='py-2 px-4'>Notifications</h6>
+                                <ul class="list-group rounded-none">
+                                    <li class="list-group-item border-0 align-items-start">
+                                        <div class="avatar bg-success me-3">
+                                            <span class="avatar-content"><i data-feather="shopping-cart"></i></span>
+                                        </div>
+                                        <div>
+                                            <h6 class='text-bold'>New Order</h6>
+                                            <p class='text-xs'>
+                                                An order made by Ahmad Saugi for product Samsung Galaxy S69
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="dropdown nav-icon me-2">
+                            <a href="#" data-bs-toggle="dropdown"
+                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="d-lg-inline-block">
+                                    <i data-feather="mail"></i>
+                                </div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
+                                <a class="dropdown-item active" href="#"><i data-feather="mail"></i> Messages</a>
+                                <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" data-bs-toggle="dropdown"
+                                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                                <div class="avatar me-1">
+                                    <img src="assets/images/avatar/avatar-s-1.png" alt="" srcset="">
+                                </div>
+                                <div class="d-none d-md-block d-lg-inline-block">Hi, Quang</div>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-end">
+                                <a class="dropdown-item" href="#"><i data-feather="user"></i> Account</a>
+                                <a class="dropdown-item active" href="#"><i data-feather="mail"></i> Messages</a>
+                                <a class="dropdown-item" href="#"><i data-feather="settings"></i> Settings</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#"><i data-feather="log-out"></i> Logout</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="main-content container-fluid">
+                <div class="page-title">
+                    <div class="row">
+                        <div class="col-12 col-md-6 order-md-1 order-last">
+                            <h3>Datatable</h3>
+                        </div>
+                        <div class="col-12 col-md-6 order-md-2 order-first">
+                            <nav aria-label="breadcrumb" class='breadcrumb-header'>
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Datatable</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+                <section class="section">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <table class='table table-striped' id="table1">
+                                <thead>
+                                    <tr>
+                                        <th>label</th>
+                                        <th>id</th>
+                                        <th>time_1</th>
+                                        <th>time_2</th>
+                                        <th>cat_1</th>
+                                        <th>cat_2</th>
+                                        <th>cat_3</th>
+                                        <th>cat_4</th>
+                                        <th>cat_5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-success">Normal</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: 33%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">33%</div>
+                                            </div>
+                                        </td>
+                                        <td>31502</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-danger">Fraud</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar"
+                                                    style="width: 52%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">52%</div>
+                                            </div>
+                                        </td>
+                                        <td>52725</td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-success">Normal</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: 35%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">35%</div>
+                                            </div>
+                                        </td>
+                                        <td>31752</td>
+                                        <td>2/17/2017 6:51:53 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td>UI</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-danger">Fraud</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar"
+                                                    style="width: 55%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">55%</div>
+                                            </div>
+                                        </td>
+                                        <td>78992</td>
+                                        <td>2/28/2019 8:27:46 AM</td>
+                                        <td>2/28/2019 10:06:39 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td>GX</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-danger">Fraud</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-danger" role="progressbar"
+                                                    style="width: 58%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">58%</div>
+                                            </div>
+                                        </td>
+                                        <td>52965</td>
+                                        <td>8/12/2019 5:16:03 PM</td>
+                                        <td>8/15/2019 8:48:17 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-success">Normal</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: 36%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">36%</div>
+                                            </div>
+                                        </td>
+                                        <td>63913</td>
+                                        <td>10/11/2019 2:49:16 PM</td>
+                                        <td>11/25/2019 2:10:04 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td>UI</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-success">Normal</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: 37%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">37%</div>
+                                            </div>
+                                        </td>
+                                        <td>87530</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="container">
+                                            <span class="badge bg-success">Normal</span>
+                                            <div class="progress">
+                                                <div class="progress-bar bg-success" role="progressbar"
+                                                    style="width: 30%;height:100%;" aria-valuenow="33" aria-valuemin="0"
+                                                    aria-valuemax="100">30%</div>
+                                            </div>
+                                        </td>
+                                        <td>24828</td>
+                                        <td>11/12/2019 3:31:21 PM</td>
+                                        <td>11/13/2019 9:55:15 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td>86442</td>
+                                        <td>10/15/2019 3:55:14 PM</td>
+                                        <td>10/16/2019 2:22:48 PM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td>87268</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td>46956</td>
+                                        <td>5/3/2019 3:39:15 PM</td>
+                                        <td>5/7/2019 9:43:09 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-danger">Fraud</span>
+                                        </td>
+                                        <td>80918</td>
+                                        <td>11/13/2018 10:20:30 AM</td>
+                                        <td>12/5/2018 3:10:05 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td>UI</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-danger">Fraud</span>
+                                        </td>
+                                        <td>20927</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-danger">Fraud</span>
+                                        </td>
+                                        <td>23203</td>
+                                        <td>12/14/2019 8:19:48 AM</td>
+                                        <td>12/16/2019 9:16:12 AM</td>
+                                        <td>C2</td>
+                                        <td>P1</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-danger">Fraud</span>
+                                        </td>
+
+                                        <td>76432</td>
+                                        <td>12/31/2018 11:06:21 AM</td>
+                                        <td>12/31/2018 8:23:41 PM</td>
+                                        <td>C2</td>
+                                        <td>P1</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td>13622</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-danger">Fraud</span>
+                                        </td>
+                                        <td>39401</td>
+                                        <td>9/1/2019 11:49:02 AM</td>
+                                        <td>10/14/2019 2:10:04 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td>UI</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-danger">Fraud</span>
+                                        </td>
+                                        <td>70960</td>
+                                        <td>1/7/2019 7:09:11 PM</td>
+                                        <td>2/1/2019 3:12:35 AM</td>
+                                        <td>C2</td>
+                                        <td>P1</td>
+                                        <td>1</td>
+                                        <td>G8</td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <span class="badge bg-success">Normal</span>
+                                        </td>
+                                        <td></td>
+                                        <td>3/15/2019 2:27:31 PM</td>
+                                        <td>3/19/2019 9:42:37 AM</td>
+                                        <td>C1</td>
+                                        <td>P2</td>
+                                        <td>1</td>
+                                        <td></td>
+                                        <td>1</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                </section>
+            </div>
+
+            <footer>
+                <div class="footer clearfix mb-0 text-muted">
+                    <div class="float-start">
+                        <p>2022 &copy; Voler</p>
+                    </div>
+                    <div class="float-end">
+                        <p>Crafted with <span class='text-danger'><i data-feather="heart"></i></span> by <a
+                                href="https://saugi.me">Saugi</a></p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <script src="assets/js/feather-icons/feather.min.js"></script>
+    <script src="assets/vendors/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+    <script src="assets/js/app.js"></script>
+
+    <script src="assets/vendors/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/js/vendors.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
