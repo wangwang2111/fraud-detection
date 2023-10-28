@@ -4,8 +4,6 @@ BÁO CÁO
 
 SỬ DỤNG HOC MÁY TRONG DỰ ĐOÁN GIAN LẬN TRONG HOẠT ĐỘNG TÍN DỤNG CỦA NGÂN HÀNG
 
-A project using some machine learning tools for fraud detection in banking credit transactions. This is a project for a competition named Attacker2022.
-
 Đội thi: ATTACKER ATTACKER
 
 MỤC LỤC 
